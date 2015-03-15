@@ -8,7 +8,7 @@ module Storail::Adapters
     def store(id, file)
       path = absolute_path(id)
 
-      FileUtils.mkdir_p(path)
+      FileUtils.mkdir_p(File.dirname(path))
       FileUtils.cp(file.path, path)
     end
 
